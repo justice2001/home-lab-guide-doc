@@ -23,4 +23,5 @@
 该项目已在gitee、github进行开源，由于开源版通过私有仓库镜像，因此可能会存在更新延迟或不同不问题
 
 Gitee: [https://gitee.com/zhengyi59/home-lab-guide-doc](https://gitee.com/zhengyi59/home-lab-guide-doc)
+
 Github: [https://github.com/justice2001/home-lab-guide-doc](https://github.com/justice2001/home-lab-guide-doc)
