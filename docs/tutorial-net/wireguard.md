@@ -36,7 +36,3 @@ description: 使用WireGuard VPN技术组建异地局域网，实现内网设备
 ## 4.通过直连方式
 
 ## 5.客户端使用
-
-### 5.1 IOS / Android
-
-### 5.2 macOS / Windows
