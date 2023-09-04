@@ -1,31 +1,12 @@
 import { defaultTheme, defineUserConfig } from 'vuepress'
+import { sidebar } from './sidebar/sidebar'
 
 export default defineUserConfig({
   lang: 'zh-CN',
   title: 'HomeLab指北',
   description: '这是一本HomeLab指南书，青年人的第一台服务器!',
   theme: defaultTheme({
-    sidebar: {
-        "/tutorial-app": [
-            {
-                text: "应用教程",
-                children: [
-                    "/tutorial-app/index.md",
-                    "/tutorial-app/dns-server.md",
-                    "/tutorial-app/minecraft-server.md"
-                ]
-            }
-        ],
-        "/self-hosted": [
-            "/self-hosted",
-            {
-                text: "网络类",
-                children: [
-                    "/self-hosted/net/technitium-dns-server.md"
-                ]
-            }
-        ]
-    },
+    sidebar: sidebar,
     navbar: [
         {
             text: '指南',
