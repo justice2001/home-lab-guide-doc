@@ -1,0 +1,28 @@
+image: node:16
+
+stages:
+  - build
+  - deploy
+
+cache:
+  paths:
+    - node_modules/
+
+build:
+    stage: build
+    before_script:
+        - npm install -g yarn
+        - yarn install
+    script:
+        - yarn docs:build
+
+deploy:
+    stage: deploy
+    script:
+        - git --version
+        # - cd docs/.vuepress/dist
+        # - git init
+        # - git add .
+        # - git commit -m 'deploy'
+        # - git push -f $GIT_REPO gh-docs
+
