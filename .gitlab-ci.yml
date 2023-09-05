@@ -24,11 +24,13 @@ deploy:
     dependencies:
         - build
     before_script:
+        - echo $CI_SERVER_SHELL_SSH_HOST
+        - echo $CI_SERVER_SHELL_SSH_PORT
         - eval `ssh-agent -s`
         - echo "$SSH_KEY" | tr -d '\r' | ssh-add - > /dev/null
         - mkdir -p ~/.ssh
         - chmod 700 ~/.ssh
-        - ssh-keyscan $GITLAB_URL >> ~/.ssh/known_hosts
+        - ssh-keyscan -p $SSH_PORT $GITLAB_URL >> ~/.ssh/known_hosts
         - chmod 644 ~/.ssh/known_hosts
         - git config --global user.email "admin@mczhengyi.top"
         - git config --global user.name "zhengyi"
