@@ -26,6 +26,7 @@ deploy:
     before_script:
         - echo $CI_SERVER_SHELL_SSH_HOST
         - echo $CI_SERVER_SHELL_SSH_PORT
+        - echo $CI_COMMIT_SHORT_SHA
         - eval `ssh-agent -s`
         - echo "$SSH_KEY" | tr -d '\r' | ssh-add - > /dev/null
         - mkdir -p ~/.ssh
@@ -37,11 +38,15 @@ deploy:
     script:
         - git --version
         - echo $GIT_REPO
-        - cd docs/.vuepress/dist
+        - cd docs/.vuepress/
         - ls -l
-        - git init
-        - git checkout -b gh-docs
+        - git clone $GIT_REPO publish
+        - cd publish
+        - git fetch origin gh-docs
+        - git checkout -b gh-docs origin/gh-docs
+        - find * | grep -v .git | xargs rm -r
+        - cp -r ../dist/* .
         - git add .
-        - git commit -m 'deploy'
-        - git push -f -u $GIT_REPO gh-docs
+        - git commit -m 'deploy from $CI_COMMIT_SHORT_SHA'
+        - git push -u $GIT_REPO gh-docs
 
