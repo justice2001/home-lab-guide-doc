@@ -11,7 +11,6 @@ cache:
 build:
     stage: build
     before_script:
-        - npm install -g yarn
         - yarn install
     script:
         - yarn docs:build
@@ -20,6 +19,7 @@ deploy:
     stage: deploy
     script:
         - git --version
+        - echo $GIT_REPO
         # - cd docs/.vuepress/dist
         # - git init
         # - git add .
