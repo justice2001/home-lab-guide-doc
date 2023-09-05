@@ -53,14 +53,14 @@ export default defineUserConfig({
                     link: "/about"
                 },
                 {
-                    text: "友情链接",
+                    text: "其他站点",
                     children: [
                         {
-                            text: "正义的自我介绍",
+                            text: "主页",
                             link: "http://www.mczhengyi.top/"
                         },
                         {
-                            text: "正义的博客",
+                            text: "博客",
                             link: "https://blog.mczhengyi.top"
                         }
                     ]
