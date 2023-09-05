@@ -41,6 +41,7 @@ deploy:
         - cd docs/.vuepress/dist
         - ls -l
         - git init
+        - git checkout -b gh-docs
         - git add .
         - git commit -m 'deploy from ${$CI_COMMIT_SHORT_SHA}'
         - git push -f -u $GIT_REPO gh-docs
