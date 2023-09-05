@@ -21,13 +21,23 @@ build:
 
 deploy:
     stage: deploy
+    dependencies:
+        - build
+    before_script:
+        - echo "$SSH_KEY" | tr -d '\r' | ssh-add - > /dev/null
+        - mkdir -p ~/.ssh
+        - chmod 700 ~/.ssh
+        - ssh-keyscan $GITLAB_URL >> ~/.ssh/known_hosts
+        - chmod 644 ~/.ssh/known_hosts
+        - git config --global user.email "admin@mczhengyi.top"
+        - git config --global user.name "zhengyi"
     script:
         - git --version
         - echo $GIT_REPO
         - cd docs/.vuepress/dist
         - ls -l
-        # - git init
-        # - git add .
-        # - git commit -m 'deploy'
-        # - git push -f $GIT_REPO gh-docs
+        - git init
+        - git add .
+        - git commit -m 'deploy'
+        - git push -f $GIT_REPO gh-docs
 
