@@ -44,7 +44,7 @@ deploy:
         - cd publish
         - git fetch origin gh-docs
         - git checkout -b gh-docs origin/gh-docs
-        - find * | grep -v .git | xargs rm -r
+        - find * -maxdepth 0 | grep -v .git | xargs rm -r
         - cp -r ../dist/* .
         - git add .
         - git commit -m 'deploy from $CI_COMMIT_SHORT_SHA'
