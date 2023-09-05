@@ -20,7 +20,8 @@ deploy:
     script:
         - git --version
         - echo $GIT_REPO
-        # - cd docs/.vuepress/dist
+        - cd docs/.vuepress/dist
+        - ls -l
         # - git init
         # - git add .
         # - git commit -m 'deploy'
