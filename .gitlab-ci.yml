@@ -46,3 +46,17 @@ deploy:
         - git commit -m 'deploy from ${$CI_COMMIT_SHORT_SHA}'
         - git push -f -u $GIT_REPO gh-docs
 
+deploy_github:
+    stage: deploy
+    dependencies:
+        - build
+    script:
+        - echo "deploy to github ..."
+
+deploy_gitee:
+    stage: deploy
+    dependencies:
+        - build
+    script:
+        - echo "deploy to gitee ..."
+
