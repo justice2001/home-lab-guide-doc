@@ -1,6 +1,5 @@
 #!/bin/bash
 
-DEPLOY_TARGET=(${DEPLOY_REPO//;/ })
 DIST_DIR="docs/.vuepress/dist"
 DEPLOY_BRANCH="gh-docs"
 
@@ -25,7 +24,7 @@ git add .
 git commit -m "deploy from $CI_COMMIT_SHORT_SHA"
 
 # Deploy to git repo
-for var in ${DEPLOY_TARGET[@]}
+for var in $DEPLOY_REPO
 do
   echo "==> Deploying to git repo: $var, branch $DEPLOY_BRANCH"
   git push -f -u $var $DEPLOY_BRANCH
