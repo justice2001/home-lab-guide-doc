@@ -23,5 +23,9 @@ export const sidebar: SidebarConfig = {
     "/tutorial-net": [
         "/tutorial-net",
         "/tutorial-net/wireguard.md"
+    ],
+    "/guide": [
+        "/guide",
+        "/guide/why-use-nas.md"
     ]
 }
