@@ -1,0 +1,1 @@
+const t=JSON.parse('{"key":"v-b403635e","path":"/tutorial-hardware/","title":"","lang":"zh-CN","frontmatter":{},"headers":[],"git":{"updatedTime":1693875508000,"contributors":[{"name":"zhengyi","email":"admin@mczhengyi.top","commits":1}]},"filePathRelative":"tutorial-hardware/index.md"}');export{t as data};

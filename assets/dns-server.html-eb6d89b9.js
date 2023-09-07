@@ -1,0 +1,1 @@
+const t=JSON.parse('{"key":"v-bb386924","path":"/tutorial-app/dns-server.html","title":"私有DNS","lang":"zh-CN","frontmatter":{"lang":"zh-CN","title":"私有DNS","description":"页面的描述"},"headers":[],"git":{"updatedTime":1693875508000,"contributors":[{"name":"zhengyi","email":"admin@mczhengyi.top","commits":1}]},"filePathRelative":"tutorial-app/dns-server.md"}');export{t as data};
